@@ -1,0 +1,33 @@
+<div class="fullwidth-container">
+  <div class="searchbar-container">
+    <div class="child-container">
+      <div routerLink="" class="logo-container">
+        <img
+          height="100%"
+          src="https://assets1.cleartax-cdn.com/cleartax/images/1661541044_imageedit_1_5407104128.webp"
+          alt="logo"
+        />
+      </div>
+      <span class="personal-info">
+        Made by <span style="color: #ff7b00">Avinash</span></span
+      >
+      <div class="search-box-container">
+        <div class="search">
+          <form [formGroup]="searchBarGroup" (ngSubmit)="onSubmit()">
+            <input
+              type="text"
+              autocomplete="off"
+              [formControl]="searchControl"
+              (focus)="filterPopup = true"
+              (blur)="filterPopup = false"
+              class="searchInpuBar"
+              style="position: relative"
+              placeholder="Search"
+            />
+          </form>
+          <app-filter-text-popup *ngIf="filterPopup"></app-filter-text-popup>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
